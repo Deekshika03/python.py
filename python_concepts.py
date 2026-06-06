@@ -1,14 +1,14 @@
 from collections import deque
 #deque comes from Python's built-in collections module and allows you to add or remove elements from both ends efficiently.
 
-# 1. Function
+# Function
 def greet(name):
     return f"Hello, {name}!"
 
 print("FUNCTION:")
 print(greet("Deekshika"))
 
-# 2. List
+# List
 print("\nLIST:")
 numbers = [10, 20, 30, 40, 50]
 
@@ -16,30 +16,27 @@ for num in numbers:
     print(num, end=" ")
 
 
-# 3. Dictionary
+#  Dictionary
 print("\nDICTIONARY:")
 student = {
     "name": "Rahul",
     "age": 20,
     "course": "BTech"
 }
-
 for key, value in student.items():
     print(f"{key}: {value}")
 
 
 
-# 4. String Manipulation
-
+# String Manipulation
 print("\nSTRING:")
 text = "Python"
-
 print("Original:", text)
 print("Uppercase:", text.upper())
 print("Reverse:", text[::-1])
 
 
-# 5. Recursion
+# Recursion
 print("\nRECURSION:")
 
 def factorial(n):
@@ -50,7 +47,7 @@ def factorial(n):
 print("Factorial of 5:", factorial(5))
 
 
-# 6. OOP
+# OOP
 print("\nOOP:")
 
 class Student:
@@ -66,7 +63,7 @@ s1 = Student("Aman", 21)
 s1.display()
 
 
-# 7. File Handling
+#  File Handling
 print("\nFILE HANDLING:")
 
 with open("sample.txt", "w") as file:
@@ -79,7 +76,7 @@ with open("sample.txt", "r") as file:
 print(content)
 
 
-# 8. Stack
+# Stack
 print("\nSTACK:")
 
 stack = []
@@ -96,7 +93,7 @@ print("After Pop:", stack)
 
 
 
-# 9. Queue
+# Queue
 
 print("\nQUEUE:")
 
@@ -114,7 +111,7 @@ print("After Dequeue:", list(queue))
 
 
 
-# 10. Binary Tree
+# Binary Tree
 print("\nBINARY TREE:")
 
 class TreeNode:
@@ -136,8 +133,24 @@ def inorder(node):
         inorder(node.left)
         print(node.val, end=" ")
         inorder(node.right)
-
 print("Inorder Traversal:")
 inorder(root)
-
 print("done!")
+
+
+***********************************************************************************
+#Reverse bits of a given 32 bits signed integer.(leetcode problem 190)
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        bits = bin(n)[2:]
+        bits = bits.zfill(32)
+        rev = bits[::-1]
+        return int(rev, 2)
+
+#leetcode 70. Climbing Stairs
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        x,y=1,1
+        for i in range (n):
+            x,y=y,x+y
+        return x 
