@@ -1,4 +1,4 @@
-from collections import deque
+ from collections import deque
 #deque comes from Python's built-in collections module and allows you to add or remove elements from both ends efficiently.
 
 # Function
@@ -154,3 +154,9 @@ class Solution:
         for i in range (n):
             x,y=y,x+y
         return x 
+
+********************************************************************************
+#leetcode binary add
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        return bin(int(a, 2) + int(b, 2))[2:]
