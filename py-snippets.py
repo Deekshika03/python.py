@@ -35,3 +35,13 @@ else:
     print("You lose!")
 
 
+*******************************************************************************************
+#array leetcode problem for single element
+class Solution:
+    def singleNumber(self, nums):
+        ans = 0
+
+        for num in nums:
+            ans ^= num
+
+        return ans
