@@ -126,3 +126,46 @@ class MyQueue:
         return not self.input_stack and not self.output_stack
 
 
+****************************************************************************************************
+#monotonic stack 
+"""A Monotonic Stack is a stack in which the elements are always kept in a specific order:
+Monotonic Increasing Stack: Elements are in increasing order (small → large).
+Monotonic Decreasing Stack: Elements are in decreasing order (large → small).
+It is mainly used to find:
+Next Greater Element
+Next Smaller Element
+Previous Greater Element
+Previous Smaller Element
+Largest Rectangle in Histogram
+Daily Temperatures
+Stock Span
+The time complexity is usually O(n) because each element is pushed and popped at most once."""
+
+"""1. Monotonic Increasing Stack
+Rule:
+Before pushing the current element, remove all greater elements from the top.
+
+while stack and stack[-1] > num:
+    stack.pop()
+
+stack.append(num)"""
+
+"""2. Monotonic Decreasing Stack
+Rule:
+Before pushing the current element, remove all smaller elements.
+
+while stack and stack[-1] < num:
+    stack.pop()
+
+stack.append(num)"""
+
+#leetcode 496 next greater element
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        stack = []
+        ans = {}
+        for num in nums2:
+            while stack and num > stack[-1]:
+                ans[stack.pop()] = num
+            stack.append(num)
+        return [ans.get(num, -1) for num in nums1]
